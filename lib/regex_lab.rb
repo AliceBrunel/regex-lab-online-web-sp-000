@@ -23,9 +23,6 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone_numbers)
-  if phone_numbers.any? {|i| i.match(/[a-zA-Z]/)} == true
-    return false
-  else
-    return true
-  end
+  invalid = phone_numbers.scan(/[a-zA-Z]/)
+  return invalid[0] == nil
 end
